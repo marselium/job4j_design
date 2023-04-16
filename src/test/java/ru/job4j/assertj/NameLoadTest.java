@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class NameLoadTest {
+
     @Test
     void checkEmpty() {
         NameLoad nameLoad = new NameLoad();
@@ -45,4 +46,5 @@ class NameLoadTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("does not contain a value");
     }
+
 }
