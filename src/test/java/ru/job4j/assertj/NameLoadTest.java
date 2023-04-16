@@ -22,7 +22,6 @@ class NameLoadTest {
                 .hasMessageContaining("Names array is empty");
     }
 
-
     @Test
     void checkNameNotContainsEquality() {
         NameLoad nl = new NameLoad();
@@ -46,5 +45,4 @@ class NameLoadTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("does not contain a value");
     }
-
 }
