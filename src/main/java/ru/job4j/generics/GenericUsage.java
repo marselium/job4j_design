@@ -5,14 +5,14 @@ import java.util.*;
 
 public class GenericUsage {
     public void printRsl(Collection<?> col) {
-        for (Iterator<?> iterator = col.iterator();iterator.hasNext();) {
+        for (Iterator<?> iterator = col.iterator(); iterator.hasNext();) {
             Object next = iterator.next();
             System.out.println(next);
         }
     }
 
     public void printInfo(Collection<? extends Person> col) {
-        for (Iterator<? extends Person> iterator = col.iterator();iterator.hasNext();) {
+        for (Iterator<? extends Person> iterator = col.iterator(); iterator.hasNext();) {
             Person next = iterator.next();
             System.out.println(next);
         }
