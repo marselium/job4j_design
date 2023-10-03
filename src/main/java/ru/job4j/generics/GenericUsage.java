@@ -53,5 +53,4 @@ public class GenericUsage {
         System.out.println("------------");
 
     }
-
 }

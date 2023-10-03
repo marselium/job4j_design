@@ -47,5 +47,4 @@ public class Generics {
             System.out.println("Текущий элемент: " + next);
         }
     }
-
 }
