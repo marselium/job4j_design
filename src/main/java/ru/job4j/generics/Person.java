@@ -42,8 +42,12 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Person person)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Person person)) {
+            return false;
+        }
         return age == person.age && name.equals(person.name) && birthday.equals(person.birthday);
     }
 
