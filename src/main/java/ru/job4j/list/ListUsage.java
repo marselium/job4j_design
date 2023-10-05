@@ -25,8 +25,6 @@ public class ListUsage {
         System.out.println("----------------");
         List<String> rsl2 = new ArrayList<>();
         rsl2.add("2-1");
-        rsl2.add("2-2");
-        rsl2.add("2-3");
         rsl.addAll(1, rsl2);
         for (String res : rsl) {
             System.out.println(res);
@@ -44,28 +42,5 @@ public class ListUsage {
         while (listIterator.hasNext()) {
             System.out.println("Текущий элемент listIterator: " + listIterator.next());
         }
-        System.out.println("----------------");
-        rsl.set(1, "2-1-1");
-        Iterator<String> rslIterator = rsl.iterator();
-        while (rslIterator.hasNext()) {
-            System.out.println("Текущий элемент rslIterator после set: " + rslIterator.next());
-        }
-        System.out.println("----------------");
-        rsl.remove(2);
-        for (String res : rsl) {
-            System.out.println(res);
-        }
-        System.out.println("----------------");
-        rsl.removeIf(s -> s.length() <= 3);
-        for (int i = 0; i < rsl.size(); i++) {
-            System.out.println("Текущий элемент fori: " + rsl1.get(i));
-        }
-        System.out.println("----------------");
-        boolean b = rsl.contains("1");
-        System.out.println("Список содержит элемент: " + b);
-        int i = rsl.indexOf("2");
-        System.out.println(i);
-        int size = rsl.size();
-        System.out.println("Размер списка равен: " + size);
     }
 }
