@@ -47,7 +47,7 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         return size;
     }
 
-    public void newSize() {
+    private void newSize() {
         if (container.length == size) {
             container = Arrays.copyOf(container, container.length * 2);
         }
