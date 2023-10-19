@@ -28,8 +28,21 @@ public class LogFilter {
         return list;
     }
 
+    public void saveTo(String out) {
+        var data = filter();
+        try (PrintWriter output = new PrintWriter(
+                new BufferedOutputStream(
+                        new FileOutputStream("data/out.txt")
+                ))) {
+            data.forEach(output::println);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         LogFilter logFilter = new LogFilter("data/log.txt");
         System.out.println(logFilter.filter());
+        logFilter.saveTo("out.txt");
     }
 }
