@@ -35,7 +35,7 @@ public class LogFilter {
                         new FileOutputStream("data/out.txt")
                 ))) {
             data.forEach(output::println);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
