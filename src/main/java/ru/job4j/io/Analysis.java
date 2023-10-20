@@ -24,6 +24,7 @@ public class Analysis {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         Analysis analysis = new Analysis();
         analysis.unavailable("data/server.log", "data/target.csv");
