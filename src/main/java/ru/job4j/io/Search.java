@@ -23,7 +23,6 @@ public class Search {
         } catch (IOException e) {
             e.printStackTrace();
             throw new IOException();
-
         }
         return searcher.getPaths();
     }
