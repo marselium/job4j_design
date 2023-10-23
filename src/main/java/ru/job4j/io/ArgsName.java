@@ -20,7 +20,7 @@ public class ArgsName {
         for (String el : args) {
             validate(el);
             String[] str = el.split("=", 2);
-            values.put(str[0].replace("-",""),str[1]);
+            values.put(str[0].replace("-", ""), str[1]);
         }
     }
 
@@ -52,7 +52,7 @@ public class ArgsName {
         if (strings[1].isEmpty()) {
             throw new IllegalArgumentException("Error: This argument '" + str + "' does not contain a value");
         }
-        if (Objects.equals(strings[0],"-")) {
+        if (Objects.equals(strings[0], "-")) {
             throw new IllegalArgumentException("Error: This argument '" + str + "' does not contain a key");
         }
     }
