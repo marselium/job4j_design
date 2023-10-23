@@ -21,7 +21,8 @@ public class Search {
         try {
            Files.walkFileTree(root, searcher);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new IOException();
         }
         return searcher.getPaths();
     }
