@@ -11,7 +11,7 @@ public class ArgsName {
     public String get(String key) {
         String str = values.get(key);
         if (str == null) {
-            throw new IllegalArgumentException("This key: '" + key + "' is missing");
+            throw new IllegalArgumentException(String.format("This key: '%s' is missing", key));
         }
         return values.get(key);
     }
@@ -42,18 +42,19 @@ public class ArgsName {
     }
 
     private void validate(String str) {
-        String[] strings = str.split("=", 2);
         if (!str.contains("=")) {
-            throw new IllegalArgumentException("Error: This argument '" + str + "' does not contain an equal sign");
+            throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain an equal sign", str));
         }
         if (str.charAt(0) != '-') {
-            throw new IllegalArgumentException("Error: This argument '" + str + "' does not start with a '-' character");
+            throw new IllegalArgumentException(String.format("Error: This argument '%s' does not start with a '-' character", str));
         }
-        if (strings[1].isEmpty()) {
-            throw new IllegalArgumentException("Error: This argument '" + str + "' does not contain a value");
+        String val = str.substring(str.indexOf("=") + 1);
+        String key = str.substring(str.indexOf("-") + 1, str.indexOf("="));
+        if (val.isEmpty()) {
+            throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain a value", str));
         }
-        if (Objects.equals(strings[0], "-")) {
-            throw new IllegalArgumentException("Error: This argument '" + str + "' does not contain a key");
+        if (key.isEmpty()) {
+            throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain a key", str));
         }
     }
 }
