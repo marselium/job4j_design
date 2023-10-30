@@ -19,14 +19,17 @@ public class EchoServer {
                     for (String str = in.readLine(); str != null && !str.isEmpty(); str = in.readLine()) {
                         if (str.startsWith("GET")) {
                             String[] arr = str.split("=");
-                            if (arr[1].substring(0, arr[1].indexOf(" ")).equals("Bye")) {
-                                System.out.println("Server is closed");
+                            if (arr[1].substring(0, arr[1].indexOf(" ")).equals("Hello")) {
+                                out.write("Hello".getBytes());
+                            } else if (arr[1].substring(0, arr[1].indexOf(" ")).equals("Bye")) {
+                                out.write("Server is closed".getBytes());
                                 server.close();
+                            } else {
+                                out.write("What".getBytes());
                             }
                         }
-                        System.out.println(str);
+                        out.flush();
                     }
-                    out.flush();
                 }
             }
         }
