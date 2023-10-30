@@ -11,7 +11,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class EchoServer {
-    private static final Logger EchoServer = LoggerFactory.getLogger(UsageLog4j.class.getName());
 
     public static void main(String[] args) throws IOException {
         try (ServerSocket server = new ServerSocket(9000)) {
@@ -26,11 +25,11 @@ public class EchoServer {
                         if (line.startsWith("GET")) {
                             String[] arrStr = line.split("=");
                             String[] arrKey = line.split("\\?");
-                            if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("="))) &&
-                                    "Hello".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
+                            if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("=")))
+                                    && "Hello".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
                                 out.write("Hello".getBytes());
-                            } else if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("="))) &&
-                                    "Bye".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
+                            } else if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("=")))
+                                    && "Bye".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
                                 out.write("Server is closed".getBytes());
                                 server.close();
                             } else {
@@ -42,8 +41,6 @@ public class EchoServer {
                     out.flush();
                 }
             }
-        } catch (IOException e) {
-            EchoServer.error("Exception in log example", e);
         }
     }
 }
