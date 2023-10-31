@@ -23,13 +23,9 @@ public class EchoServer {
                     String line = in.readLine();
                     while (!line.isEmpty()) {
                         if (line.startsWith("GET")) {
-                            String[] arrStr = line.split("=");
-                            String[] arrKey = line.split("\\?");
-                            if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("=")))
-                                    && "Hello".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
+                            if (line.contains("msg=Hello")) {
                                 out.write("Hello".getBytes());
-                            } else if ("msg".equals(arrKey[1].substring(0, arrKey[1].indexOf("=")))
-                                    && "Bye".equals(arrStr[1].substring(0, arrStr[1].indexOf(" ")))) {
+                            } else if (line.contains("msg=Bye")) {
                                 out.write("Server is closed".getBytes());
                                 server.close();
                             } else {
