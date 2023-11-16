@@ -2,13 +2,12 @@ package ru.job4j.io;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import ru.job4j.iterator.io.Analysis;
 
 import java.io.*;
 import java.nio.file.Path;
-import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AnalysisTest {
     @Test

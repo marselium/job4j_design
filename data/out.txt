@@ -1,3 +1,4 @@
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:18 +0300] "GET /items/ajax.html HTTP/1.1" 404 1113
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:23 +0300] "GET /job4j.ru/profile/ HTTP/1.1" 404 1110
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:34 +0300] "GET /job4j.ru/profileNew/ HTTP/1.1" 404 -
+PrCred{id=73192880596, num_dog='1173', date_beg=2023-01-16, date_end=2023-03-31, summa=2240000.0, val='RUB', kind_credit='Приобретенные права требования (ипотека)', list_pay=73192880562, list_plan_pay=73192880563, state='CLOSE'}
+PrCred{id=65813719606, num_dog='1165', date_beg=2023-03-07, date_end=2023-03-10, summa=1500000.0, val='RUB', kind_credit='Приобретенные права требования (ипотека)', list_pay=65813719575, list_plan_pay=65813719576, state='CLOSE'}
+PrCred{id=65572731937, num_dog='1158', date_beg=2023-02-15, date_end=2023-09-07, summa=850000.0, val='RUB', kind_credit='Приобретенные права требования (ипотека)', list_pay=65572731807, list_plan_pay=65572731809, state='WORK'}
+PrCred{id=48371020047, num_dog='1189', date_beg=2023-08-02, date_end=2024-08-16, summa=1235000.0, val='RUB', kind_credit='Приобретенные права требования (ипотека)', list_pay=48371020015, list_plan_pay=48371020016, state='WORK'}
