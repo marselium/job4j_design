@@ -30,7 +30,7 @@ public class JsonCred {
 
         try (PrintWriter output = new PrintWriter(
                 new BufferedOutputStream(
-                        new FileOutputStream("data/prcrID")
+                        new FileOutputStream("data/prcrID.txt")
                 ))) {
             enums.forEach(x -> output.println(x.getId() + ","));
         } catch (IOException e) {
