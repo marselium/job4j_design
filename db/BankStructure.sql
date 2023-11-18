@@ -10,7 +10,6 @@ create table Address(
     ParentId int
 );
 
-
 create table Phonenumbers(
 	id serial primary key,
    	Phone int,
