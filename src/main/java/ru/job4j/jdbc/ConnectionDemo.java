@@ -1,5 +1,7 @@
 package ru.job4j.jdbc;
 
+import ru.job4j.iterator.io.Config;
+
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -8,12 +10,13 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionDemo {
-    public static void main(String[] args) throws SQLException, IOException {
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("data/app.properties"));
-        String url = properties.getProperty("datasource.url");
-        String login = properties.getProperty("datasource.username");
-        String password = properties.getProperty("datasource.password");
+    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+        Config config = new Config("data/app.properties");
+        config.load();
+        Class.forName(config.value("hibernate.connection.driver_class"));
+        String url = config.value("hibernate.connection.url");
+        String login = config.value("hibernate.connection.username");
+        String password = config.value("hibernate.connection.password");
         try (Connection connection = DriverManager.getConnection(url, login, password)) {
             DatabaseMetaData metaData = connection.getMetaData();
             System.out.println(metaData.getUserName());
