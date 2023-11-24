@@ -1,7 +1,5 @@
 package ru.job4j.jdbc;
 
-import ru.job4j.iterator.io.Config;
-
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -11,7 +9,7 @@ import java.util.Properties;
 
 public class ConnectionDemo {
     public static void main(String[] args) throws SQLException, IOException {
-        final Properties properties = new Properties();
+        Properties properties = new Properties();
         properties.load(new FileInputStream("data/app.properties"));
         String url = properties.getProperty("datasource.url");
         String login = properties.getProperty("datasource.username");
