@@ -22,13 +22,13 @@ public class ImportDB {
     public List<User> load() throws IOException {
         List<User> users = new ArrayList<>();
         try (BufferedReader rd = new BufferedReader(new FileReader(dump))) {
-             rd.lines().forEach(str -> {
-                 String nameMail[] = str.split(";",2);
-                 if (nameMail[0].isEmpty() || nameMail[1].isEmpty()) {
-                     throw new IllegalArgumentException("Your string must be like: \"name;email;\"");
-                 }
-                 users.add(new User(nameMail[0], nameMail[1].replace(";", "")));
-             });
+            rd.lines().forEach(str -> {
+                String[] nameEmail = str.split(";", 2);
+                if (nameEmail[0].isEmpty() || nameEmail[1].isEmpty()) {
+                    throw new IllegalArgumentException("Your string must contain \"name;email;\"");
+                }
+                users.add(new User(nameEmail[0], nameEmail[1].replace(";", "")));
+            });
         }
         return users;
     }
@@ -59,7 +59,6 @@ public class ImportDB {
             this.email = email;
         }
     }
-
 
     public static void main(String[] args) throws Exception {
         Properties cfg = new Properties();
