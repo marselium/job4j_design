@@ -23,7 +23,7 @@ public class ImportDB {
         List<User> users = new ArrayList<>();
         try (BufferedReader rd = new BufferedReader(new FileReader(dump))) {
             rd.lines().forEach(str -> {
-                String nameMail[]= str.split(";", 2);
+                String[] nameMail= str.split(";", 2);
                 if (nameMail[0].isEmpty() || nameMail[1].isEmpty()) {
                     throw new IllegalArgumentException("Your string must be like: \"name;email;\"");
                 }
